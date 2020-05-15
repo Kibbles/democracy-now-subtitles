@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# Subtitles Now! is a subtitle downloader for Democracy Now! video subtitles.
+# Subtitles Now is a subtitle downloader for Democracy Now! .mp4 videos.
 
 from sys import argv
 
