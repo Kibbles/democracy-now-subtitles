@@ -1,10 +1,14 @@
 import youtube_dl
 import webvtt
+from sys import argv
 
 # Subtitles Now grabs the .vtt subtitle file for Democracy Now!'s web stream and converts it to .srt
 
 if __name__ == "__main__":
-    video_url = input("Copy and paste the Democracy Now video URL: ")
+    if len(argv) > 1:
+        video_url = argv[1]
+    else:
+        video_url = input("Copy and paste a Democracy Now video URL: ")
 
     video_url = video_url.strip()
 

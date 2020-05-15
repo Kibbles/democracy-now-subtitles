@@ -1,6 +1,6 @@
 # Subtitles Now!
 
-A subtitle downloader for Democracy Now! (https://www.democracynow.org/) offline videos.
+A subtitle downloader for [Democracy Now!](https://www.democracynow.org/) offline videos.
 
 ## Dependencies
 
