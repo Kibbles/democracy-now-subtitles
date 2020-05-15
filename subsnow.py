@@ -1,8 +1,13 @@
-import youtube_dl
-import webvtt
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+# Subtitles Now! is a subtitle downloader for Democracy Now! video subtitles.
+
 from sys import argv
 
-# Subtitles Now grabs the .vtt subtitle file for Democracy Now!'s web stream and converts it to .srt
+import youtube_dl
+import webvtt
+
 
 if __name__ == "__main__":
     if len(argv) > 1:
