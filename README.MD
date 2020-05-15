@@ -8,7 +8,7 @@ youtube-dl: https://github.com/ytdl-org/youtube-dl
 
 webvtt-py: https://pypi.org/project/webvtt-py/
 
-`pip install youtube-dl webvvt-py`
+`pip install youtube-dl webvtt-py`
 
 ## Usage
 
