@@ -4,6 +4,7 @@
 # Subtitles Now is a subtitle downloader for Democracy Now! .mp4 videos.
 
 from sys import argv
+from os import remove
 
 import youtube_dl
 import webvtt
@@ -42,6 +43,13 @@ if __name__ == "__main__":
         ydl.download([video_url])
 
     # Convert the .vtt file to .srt
-    vtt = webvtt.read(video_id + ".en.vtt")
+
+    vtt_filepath = video_id + ".en.vtt"
+
+    vtt = webvtt.read(vtt_filepath)
     vtt.save_as_srt(video_id + ".srt")
+
+    # Delete the .vtt file
+    remove(vtt_filepath)
+
     print("Subtitle downloaded and converted (" + video_id + ".srt)")
