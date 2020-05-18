@@ -1,6 +1,6 @@
 # Subtitles Now!
 
-A subtitle downloader for [Democracy Now!](https://www.democracynow.org/) offline videos.
+A subtitle downloader for [Democracy Now!](https://www.democracynow.org/) offline videos. It grabs the subtitles from the live episode on their website and converts them into `.srt` format, which is compatible with most media players.
 
 ## Dependencies
 
