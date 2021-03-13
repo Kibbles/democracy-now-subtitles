@@ -6,17 +6,20 @@
 # on their website and converts them into .srt format, which is compatible with most media players.
 
 from sys import argv
-from os import remove
+from os import remove, path
 from datetime import date
 
 import youtube_dl
 import webvtt
 
+# Controls whether the file is copied after download, and where to
+copy_to_path = True
+copy_destination = path.abspath("D:/Downloads/")
 
 if __name__ == "__main__":
     if len(argv) > 1:
-        if argv[1].strip() == "--today":
-            # The "--today" flag grabs the episode for the current date based on system time
+        if argv[1].strip() == "-today":
+            # The "-today" flag grabs the episode for the current date based on system time
             today = date.today()
             video_url = "https://www.democracynow.org/shows/" + today.strftime("%Y/%m/%d")
         else:
@@ -25,6 +28,7 @@ if __name__ == "__main__":
         video_url = input("Copy and paste a Democracy Now Full Episode video URL:\n")
 
     video_url = video_url.strip()
+    print(video_url)
 
     # Match the Democracy Now video filenames (ex. dn2020-0515.mp4)
     video_id = video_url.split("/")
@@ -54,9 +58,14 @@ if __name__ == "__main__":
     vtt_filepath = video_id + ".en.vtt"
 
     vtt = webvtt.read(vtt_filepath)
-    vtt.save_as_srt(video_id + ".srt")
+
+    if copy_to_path:
+        vtt.save_as_srt(path.join(copy_destination, video_id + ".srt"))
+        print("Saved to", copy_destination)
+    else:
+        vtt.save_as_srt(video_id + ".srt")
 
     # Delete the .vtt file
     remove(vtt_filepath)
 
-    print("Subtitle downloaded and converted (" + video_id + ".srt)")
+    print("Subtitle downloaded and converted ({savepath})".format(savepath=path.join(copy_destination,video_id + ".srt")) if copy_to_path else (video_id + ".srt"))

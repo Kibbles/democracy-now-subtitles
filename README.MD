@@ -14,9 +14,9 @@ webvtt-py: https://pypi.org/project/webvtt-py/
 
 ## Usage
 
-Use the `--today` flag to grab the subtitle for today's episode:
+Use the `-today` flag to grab the subtitle for today's episode:
 
-`subsnow.py --today`
+`subsnow.py -today`
 
 You can also pass a Democracy Now! video URL to the program: 
 
