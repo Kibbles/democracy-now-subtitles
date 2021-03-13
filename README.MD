@@ -26,3 +26,6 @@ If no argument is passed, the program will prompt for one.
 It will then extract a .vtt subtitle file using `youtube-dl` and convert it using `webvtt-py`.
 The resulting `.srt` file matches the episode name and can then be played in popular media players, 
 such as Media Player Classic or VLC.
+
+
+The `copy_to_path` setting can be used to move the file out of the script directory after it has been downloaded.
