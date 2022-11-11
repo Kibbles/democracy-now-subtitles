@@ -1,4 +1,4 @@
-# Subtitles Now!
+# Democracy Now! Subtitles Downloader
 
 A subtitle downloader for [Democracy Now!](https://www.democracynow.org/) offline videos. 
 It grabs the subtitles from the live episode on their website and converts them into `.srt` format, 
@@ -22,10 +22,10 @@ You can also pass a Democracy Now! video URL to the program:
 
 `subsnow.py https://www.democracynow.org/shows/2020/5/15`
 
-If no argument is passed, the program will prompt for one.
+If no argument is passed, the program will prompt for a video URL instead.
 It will then extract a .vtt subtitle file using `youtube-dl` and convert it using `webvtt-py`.
+
 The resulting `.srt` file matches the episode name and can then be played in popular media players, 
 such as Media Player Classic or VLC.
 
-
-The `copy_to_path` setting can be used to move the file out of the script directory after it has been downloaded.
+The `copy_to_path` setting can additionally be used to move the file out of the script directory after it has been downloaded.
