@@ -14,18 +14,22 @@ webvtt-py: https://pypi.org/project/webvtt-py/
 
 ## Usage
 
-Use the `-today` flag to grab the subtitle for today's episode:
+Use the `-t / --today` flag to grab the subtitle for today's episode:
 
 `subsnow.py -today`
 
-You can also pass a Democracy Now! video URL to the program: 
+(note that this won't work on weekends - no shows on Sat / Sun!)
 
-`subsnow.py https://www.democracynow.org/shows/2020/5/15`
+Use the `-u / --url` flag to give it a specific show URL:
 
-If no argument is passed, the program will prompt for a video URL instead.
-It will then extract a .vtt subtitle file using `youtube-dl` and convert it using `webvtt-py`.
+`subsnow.py --url https://www.democracynow.org/shows/2020/5/15`
 
-The resulting `.srt` file matches the episode name and can then be played in popular media players, 
-such as Media Player Classic or VLC.
+If no argument is passed, the program will prompt for a video URL.
+
+It extracts a .vtt subtitle file using `youtube-dl` and then convert it to an `.srt` using `webvtt-py`.
+
+The resulting file should match the episode name and can then be played in popular media players such as MPC or VLC.
 
 The `copy_to_path` setting can additionally be used to move the file out of the script directory after it has been downloaded.
+
+Enjoy!
